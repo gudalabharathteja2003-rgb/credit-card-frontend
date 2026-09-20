@@ -1,0 +1,6 @@
+{
+  "name": "Credit Card Fraud Detection Portal",
+  "description": "Enterprise credit card fraud detection portal featuring real-time transaction inference with FastAPI ML backend, Firebase Authentication, and prediction history tracking.",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}

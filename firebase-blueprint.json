@@ -1,0 +1,40 @@
+{
+  "entities": {
+    "Prediction": {
+      "title": "Prediction",
+      "description": "Credit card fraud prediction record",
+      "type": "object",
+      "properties": {
+        "userId": { "type": "string", "description": "Firebase Auth UID" },
+        "userEmail": { "type": "string", "description": "User email address" },
+        "modelName": { "type": "string", "description": "Name of the ML model used" },
+        "inputData": { "type": "object", "description": "30 input features (Time, Amount, V1-V28)" },
+        "prediction": { "type": "number", "description": "0 for Legitimate, 1 for Fraudulent" },
+        "fraudProbability": { "type": "number", "description": "Probability score between 0.0 and 1.0" },
+        "createdAt": { "type": "string", "format": "date-time", "description": "Firestore server timestamp" }
+      },
+      "required": ["userId", "userEmail", "prediction", "fraudProbability", "createdAt"]
+    },
+    "User": {
+      "title": "User",
+      "description": "Registered user profile",
+      "type": "object",
+      "properties": {
+        "email": { "type": "string", "description": "User email address" },
+        "displayName": { "type": "string", "description": "User display name" },
+        "createdAt": { "type": "string", "format": "date-time", "description": "Registration timestamp" }
+      },
+      "required": ["email"]
+    }
+  },
+  "firestore": {
+    "/predictions/{predictionId}": {
+      "schema": "Prediction",
+      "description": "Fraud predictions stored per user"
+    },
+    "/users/{userId}": {
+      "schema": "User",
+      "description": "User profiles"
+    }
+  }
+}
