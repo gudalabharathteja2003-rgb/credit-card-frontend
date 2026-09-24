@@ -56,7 +56,7 @@ export const Dashboard: React.FC = () => {
           </p>
         </div>
 
-        <div className="flex items-center gap-3">
+        <div className="flex flex-wrap items-center gap-3">
           <Link to="/predict">
             <Button variant="primary" size="md" rightIcon={<ArrowRight className="w-4 h-4" />}>
               Run New Prediction
